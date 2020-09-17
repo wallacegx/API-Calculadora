@@ -1,11 +1,12 @@
-import os
+from flask_ngrok import run_with_ngrok
 from flask import Flask, jsonify
 from flask_cors import CORS
 from math import sqrt
 
 app = Flask(__name__)
 
-cors = CORS(app, resource={r"/*": {"origins": "*"}})
+CORS(app)
+run_with_ngrok(app)
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -205,10 +206,4 @@ def mod(value1,value2,value3):
 
     return jsonify(ret)
 
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
-
-if __name__ == "__main__":
-    main()
+app.run()
