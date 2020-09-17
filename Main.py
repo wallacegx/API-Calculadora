@@ -185,7 +185,7 @@ def harmonicmean(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "Resultado" : ((1 / valor1) + (1 / valor2) + (1 / valor3)) / 3 }
+    ret = { "Resultado" : (3 / (1 / valor1) + (1 / valor2) + (1 / valor3)) }
 
     return jsonify(ret)
 
