@@ -2,7 +2,6 @@ import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 from math import sqrt
-import pandas as pd
 
 app = Flask(__name__)
 
