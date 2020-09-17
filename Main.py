@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 from math import sqrt
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -22,7 +23,9 @@ def root():
            'link + /arithmeticaverage/primeiro valor/segundo valor/terceiro valor <br>' + \
            'link + /harmonicmean/primeiro valor/segundo valor/terceiro valor <br>' + \
            'link + /mod/primeiro valor/segundo valor/terceiro valor <br>'
-        # ----------------------------------------------------------------------------------------------------------------------
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 
 
 @app.route('/sum/<value1>/<value2>', methods=['GET'])
@@ -183,7 +186,7 @@ def harmonicmean(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "Resultado" : ((1 / valor1) + (1 / valor2) * (1 / valor3)) / 3 }
+    ret = { "Resultado" : ((1 / valor1) + (1 / valor2) + (1 / valor3)) / 3 }
 
     return jsonify(ret)
 
@@ -208,7 +211,19 @@ def mod(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "Resultado" : (valor1 * valor2 * valor3) / 3 }
+    dicionario = {}
+    array = [valor1, valor2, valor3]
+
+    for numeros in array:
+        try:
+            dicionario[str(numeros)] = dicionario[str(numeros)] + 1
+        except:
+            dicionario[str(numeros)] = 1
+
+    if dicionario[max(dicionario, key=dicionario.get)] == 1:
+        ret = { "Resultado" : print(dicionario.keys()) }
+    else:
+        ret = { "Resultado" : (max(dicionario, key=dicionario.get)) }
 
     return jsonify(ret)
 
