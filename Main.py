@@ -5,8 +5,7 @@ from math import sqrt
 
 app = Flask(__name__)
 
-CORS(app)
-run_with_ngrok(app)
+cors = CORS(app, resource={r"/*":{"origins": "*"}})
 
 #-----------------------------------------------------------------------------------------------------------------------
 
@@ -186,4 +185,10 @@ def mod(value1,value2,value3):
 
     return jsonify(ret)
 
-app.run()
+def main():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
+
+if __name__ == "__main__":
+    main()
