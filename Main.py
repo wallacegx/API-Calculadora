@@ -18,8 +18,9 @@ def root():
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/sum?value1=<value1>&value2=<value2>', methods=['GET'])
+@app.route('/sum/<value1>/<value2>', methods=['GET'])
 def somar(value1, value2):
+
     try:
         valor1 = int(value1)
     except:
