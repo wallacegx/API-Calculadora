@@ -1,13 +1,11 @@
 import os
-from flask_ngrok import run_with_ngrok
 from flask import Flask, jsonify
 from flask_cors import CORS
 from math import sqrt
 
 app = Flask(__name__)
 
-CORS(app)
-run_with_ngrok(app)
+cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +39,7 @@ def somar(value1, value2):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/subtraction?value1=<value1>&value2=<value2>', methods=['GET'])
+@app.route('/subtraction/<value1>/<value2>', methods=['GET'])
 def subtraction(value1,value2):
     try:
         valor1 = int(value1)
@@ -61,7 +59,7 @@ def subtraction(value1,value2):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/division?value1=<value1>&value2=<value2>', methods=['GET'])
+@app.route('/division/<value1>/<value2>', methods=['GET'])
 def division(value1,value2):
     try:
         valor1 = int(value1)
@@ -81,7 +79,7 @@ def division(value1,value2):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/multiplication?value1=<value1>&value2=<value2>', methods=['GET'])
+@app.route('/multiplication/<value1>/<value2>', methods=['GET'])
 def multiplication(value1,value2):
     try:
         valor1 = int(value1)
@@ -101,7 +99,7 @@ def multiplication(value1,value2):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/squareroot?value=<value>', methods=['GET'])
+@app.route('/squareroot/<value>', methods=['GET'])
 def squareroot(value):
     try:
         valor1 = int(value)
@@ -116,7 +114,7 @@ def squareroot(value):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/power?base=<base>&exponent=<exponent>', methods=['GET'])
+@app.route('/power/<base>/<exponent>', methods=['GET'])
 def power(base,exponent):
     try:
         li_base = int(base)
@@ -136,7 +134,7 @@ def power(base,exponent):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/arithmeticaverage?value1=<value1>&value2=<value2>&value3=<value3>', methods=['GET'])
+@app.route('/arithmeticaverage/<value1>/<value2>/<value3>', methods=['GET'])
 def arithmeticaverage(value1,value2,value3):
     try:
         valor1 = int(value1)
@@ -161,7 +159,7 @@ def arithmeticaverage(value1,value2,value3):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/harmonicmean?value1=<value1>&value2=<value2>&value3=<value3>', methods=['GET'])
+@app.route('/harmonicmean/<value1>/<value2>/<value3>', methods=['GET'])
 def harmonicmean(value1,value2,value3):
     try:
         valor1 = int(value1)
@@ -186,7 +184,7 @@ def harmonicmean(value1,value2,value3):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/mod?value1=<value1>&value2=<value2>&value3=<value3>', methods=['GET'])
+@app.route('/mod/<value1>/<value2>/<value3>', methods=['GET'])
 def mod(value1,value2,value3):
     try:
         valor1 = int(value1)
