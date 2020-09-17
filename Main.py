@@ -12,10 +12,17 @@ cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
 @app.route('/')
 def root():
-    return 'Digite qual operação gostaria de fazer entre as opções'
-
-
-# ----------------------------------------------------------------------------------------------------------------------
+    return 'Digite qual operação gostaria de fazer entre as opções <br>' + \
+           'link + /sum/primeiro valor/segundo valor <br>' + \
+           'link + /subtraction/primeiro valor/segundo valor <br>' + \
+           'link + /division/primeiro valor/segundo valor <br>' + \
+           'link + /multiplication/primeiro valor/segundo valor <br>' + \
+           'link + /squareroot/valor <br>' + \
+           'link + /power/base/expoente <br>' + \
+           'link + /arithmeticaverage/primeiro valor/segundo valor/terceiro valor <br>' + \
+           'link + /harmonicmean/primeiro valor/segundo valor/terceiro valor <br>' + \
+           'link + /mod/primeiro valor/segundo valor/terceiro valor <br>'
+        # ----------------------------------------------------------------------------------------------------------------------
 
 
 @app.route('/sum/<value1>/<value2>', methods=['GET'])
