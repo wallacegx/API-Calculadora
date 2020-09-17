@@ -8,8 +8,6 @@ app = Flask(__name__)
 CORS(app)
 run_with_ngrok(app)
 
-app.run()
-
 #-----------------------------------------------------------------------------------------------------------------------
 
 @app.route('/')
@@ -189,3 +187,5 @@ def mod(value1,value2,value3):
     ret = { "message" : (valor1 * valor2 * valor3) / 3 }
 
     return jsonify(ret)
+
+app.run()
