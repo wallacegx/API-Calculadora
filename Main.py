@@ -12,16 +12,16 @@ CORS(app)
 
 @app.route('/')
 def root():
-    return 'Digite qual operação gostaria de fazer entre as opções <br>' + \
-           'link + /sum/primeiro valor/segundo valor <br>' + \
-           'link + /subtraction/primeiro valor/segundo valor <br>' + \
-           'link + /division/primeiro valor/segundo valor <br>' + \
-           'link + /multiplication/primeiro valor/segundo valor <br>' + \
-           'link + /squareroot/valor <br>' + \
-           'link + /power/base/expoente <br>' + \
-           'link + /arithmeticaverage/primeiro valor/segundo valor/terceiro valor <br>' + \
-           'link + /harmonicmean/primeiro valor/segundo valor/terceiro valor <br>' + \
-           'link + /mod/primeiro valor/segundo valor/terceiro valor <br>'
+    return 'Digite qual operação gostaria de fazer entre as opções <br> <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/sum/primeiro valor/segundo valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/subtraction/primeiro valor/segundo valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/division/primeiro valor/segundo valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/multiplication/primeiro valor/segundo valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/squareroot/valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/power/base/expoente <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/arithmeticaverage/primeiro valor/segundo valor/terceiro valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/harmonicmean/primeiro valor/segundo valor/terceiro valor <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/mod/primeiro valor/segundo valor/terceiro valor <br>'
 
 
 # ----------------------------------------------------------------------------------------------------------------------
