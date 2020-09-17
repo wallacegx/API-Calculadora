@@ -32,7 +32,7 @@ def somar(value1, value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "message" : valor1 + valor2 }
+    ret = { "Resultado" : valor1 + valor2 }
 
     return jsonify(ret)
 
@@ -52,7 +52,7 @@ def subtraction(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "message" : valor1 - valor2 }
+    ret = { "Resultado" : valor1 - valor2 }
 
     return jsonify(ret)
 
@@ -72,7 +72,7 @@ def division(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "message" : valor1 / valor2 }
+    ret = { "Resultado" : valor1 / valor2 }
 
     return jsonify(ret)
 
@@ -92,7 +92,7 @@ def multiplication(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "message" : valor1 * valor2 }
+    ret = { "Resultado" : valor1 * valor2 }
 
     return jsonify(ret)
 
@@ -107,7 +107,7 @@ def squareroot(value):
     except:
         return 'Valor inválido.'
 
-    ret = { "message" : sqrt(valor1) }
+    ret = { "Resultado" : sqrt(valor1) }
 
     return jsonify(ret)
 
@@ -127,7 +127,7 @@ def power(base,exponent):
     except:
         return 'Expoente inválido.'
 
-    ret = { "message" : li_base ** li_exponent }
+    ret = { "Resultado" : li_base ** li_exponent }
 
     return jsonify(ret)
 
@@ -152,7 +152,7 @@ def arithmeticaverage(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "message" : (valor1 + valor2 + valor3) / 3 }
+    ret = { "Resultado" : (valor1 + valor2 + valor3) / 3 }
 
     return jsonify(ret)
 
@@ -177,7 +177,7 @@ def harmonicmean(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "message" : ((1 / valor1) + (1 / valor2) * (1 / valor3)) / 3 }
+    ret = { "Resultado" : ((1 / valor1) + (1 / valor2) * (1 / valor3)) / 3 }
 
     return jsonify(ret)
 
@@ -202,8 +202,9 @@ def mod(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "message" : (valor1 * valor2 * valor3) / 3 }
+    ret = { "Resultado" : (valor1 * valor2 * valor3) / 3 }
 
     return jsonify(ret)
+
 
 app.run()
