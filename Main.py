@@ -152,7 +152,7 @@ def power(base, exponent):
 def arithmeticaverage(value1):
 
     try:
-        array = [int(numeros) for numeros in value1.split('/')]
+        array = [int(numeros) for numeros in value1.split(';')]
     except:
         return 'A sequencia não possui somente números'
 
@@ -168,7 +168,7 @@ def arithmeticaverage(value1):
 def harmonicmean(value1):
 
     try:
-        array = [1 / int(numeros) for numeros in value1.split('/')]
+        array = [1 / int(numeros) for numeros in value1.split(';')]
     except:
         return 'A sequencia não possui somente números'
 
@@ -187,7 +187,7 @@ def mod(value1):
     dicionario = {}
 
     try:
-        array = [int(numeros) for numeros in value1.split('/')]
+        array = [int(numeros) for numeros in value1.split(';')]
     except:
         return 'A sequencia não possui somente números'
 
