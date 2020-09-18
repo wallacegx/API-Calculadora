@@ -62,7 +62,7 @@ def subtraction(value1, value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = {"Resultado éé": valor1 - valor2}
+    ret = {"Resultado": valor1 - valor2}
 
     return jsonify(ret)
 
@@ -82,7 +82,10 @@ def division(value1, value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = {"Resultado": valor1 / valor2}
+    try:
+        ret = {"Resultado": valor1 / valor2}
+    except ZeroDivisionError:
+        return 'Divisão por zero não é possível'
 
     return jsonify(ret)
 
