@@ -21,9 +21,9 @@ def root():
            'https://trab-robson-wallace-d27hec6.herokuapp.com/multiplication/primeirovalor/segundovalor <br>' + \
            'https://trab-robson-wallace-d27hec6.herokuapp.com/squareroot/valor <br>' + \
            'https://trab-robson-wallace-d27hec6.herokuapp.com/power/base/expoente <br>' + \
-           'https://trab-robson-wallace-d27hec6.herokuapp.com/arithmeticaverage/primeirovalor/segundovalor/terceirovalor <br>' + \
-           'https://trab-robson-wallace-d27hec6.herokuapp.com/harmonicmean/primeirovalor/segundovalor/terceirovalor <br>' + \
-           'https://trab-robson-wallace-d27hec6.herokuapp.com/mod/primeirovalor/segundovalor/terceirovalor <br>'
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/arithmeticaverage/primeirovalor;segundo;terceiro;... <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/harmonicmean/primeirovalor;segundo;terceiro;... <br>' + \
+           'https://trab-robson-wallace-d27hec6.herokuapp.com/mod/primeirovalor;segundo;terceiro;... <br>'
 
 
 # ----------------------------------------------------------------------------------------------------------------------
