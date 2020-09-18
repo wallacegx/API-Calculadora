@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 CORS(app)
 
+app.config['JSON_AS_ASCII'] = False
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
@@ -60,7 +62,7 @@ def subtraction(value1, value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = {"Resultado": valor1 - valor2}
+    ret = {"Resultado éé": valor1 - valor2}
 
     return jsonify(ret)
 
