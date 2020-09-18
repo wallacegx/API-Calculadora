@@ -197,10 +197,7 @@ def mod(value1):
         except:
             dicionario[numeros] = 1
 
-    if dicionario[max(dicionario, key=dicionario.get)] == 1:
-        ret = {"Resultado": array}
-    else:
-        ret = {"Resultado": int((max(dicionario, key=dicionario.get)))}
+    ret = {"Resultado": [numero for numero, repeticoes in dicionario.items() if repeticoes == max(dicionario.values())]}
 
     return jsonify(ret)
 
