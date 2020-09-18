@@ -220,7 +220,7 @@ def mod(value1,value2,value3):
             dicionario[str(numeros)] = 1
 
     if dicionario[max(dicionario, key=dicionario.get)] == 1:
-        ret = { "Resultado" : dicionario.keys() }
+        ret = { "Resultado" : str(dicionario.keys()) }
     else:
         ret = { "Resultado" : (max(dicionario, key=dicionario.get)) }
 
