@@ -148,24 +148,15 @@ def power(base, exponent):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/arithmeticaverage/<value1>/<value2>/<value3>', methods=['GET'])
-def arithmeticaverage(value1, value2, value3):
-    try:
-        valor1 = int(value1)
-    except:
-        return 'Primeiro valor inválido.'
+@app.route('/arithmeticaverage/<value1>', methods=['GET'])
+def arithmeticaverage(value1):
 
     try:
-        valor2 = int(value2)
+        array = [int(numeros) for numeros in value1.split('/')]
     except:
-        return 'Segundo valor inválido.'
+        return 'A sequencia não possui somente números'
 
-    try:
-        valor3 = int(value3)
-    except:
-        return 'Terceiro valor inválido.'
-
-    ret = {"Resultado": (valor1 + valor2 + valor3) / 3}
+    ret = {"Resultado": sum(array) / len(array)}
 
     return jsonify(ret)
 
@@ -173,24 +164,16 @@ def arithmeticaverage(value1, value2, value3):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/harmonicmean/<value1>/<value2>/<value3>', methods=['GET'])
-def harmonicmean(value1, value2, value3):
-    try:
-        valor1 = int(value1)
-    except:
-        return 'Primeiro valor inválido.'
+@app.route('/harmonicmean/<value1>', methods=['GET'])
+def harmonicmean(value1):
 
     try:
-        valor2 = int(value2)
+        array = [1 / int(numeros) for numeros in value1.split('/')]
     except:
-        return 'Segundo valor inválido.'
+        return 'A sequencia não possui somente números'
 
-    try:
-        valor3 = int(value3)
-    except:
-        return 'Terceiro valor inválido.'
 
-    ret = {"Resultado": 3 / ((1 / valor1) + (1 / valor2) + (1 / valor3))}
+    ret = {"Resultado": len(array) / sum(array)}
 
     return jsonify(ret)
 
@@ -198,31 +181,21 @@ def harmonicmean(value1, value2, value3):
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-@app.route('/mod/<value1>/<value2>/<value3>', methods=['GET'])
-def mod(value1, value2, value3):
-    try:
-        valor1 = int(value1)
-    except:
-        return 'Primeiro valor inválido.'
-
-    try:
-        valor2 = int(value2)
-    except:
-        return 'Segundo valor inválido.'
-
-    try:
-        valor3 = int(value3)
-    except:
-        return 'Terceiro valor inválido.'
+@app.route('/mod/<value1>', methods=['GET'])
+def mod(value1):
 
     dicionario = {}
-    array = [valor1, valor2, valor3]
+
+    try:
+        array = [int(numeros) for numeros in value1.split('/')]
+    except:
+        return 'A sequencia não possui somente números'
 
     for numeros in array:
         try:
-            dicionario[str(numeros)] = dicionario[str(numeros)] + 1
+            dicionario[numeros] = dicionario[numeros] + 1
         except:
-            dicionario[str(numeros)] = 1
+            dicionario[numeros] = 1
 
     if dicionario[max(dicionario, key=dicionario.get)] == 1:
         ret = {"Resultado": array}
