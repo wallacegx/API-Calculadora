@@ -222,7 +222,7 @@ def mod(value1, value2, value3):
     if dicionario[max(dicionario, key=dicionario.get)] == 1:
         ret = {"Resultado": array}
     else:
-        ret = {"Resultado": (max(dicionario, key=dicionario.get))}
+        ret = {"Resultado": int((max(dicionario, key=dicionario.get)))}
 
     return jsonify(ret)
 
