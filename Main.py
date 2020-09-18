@@ -40,7 +40,7 @@ def somar(value1, value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "Resultado" : valor1 + valor2 }
+    ret = {"Resultado": valor1 + valor2}
 
     return jsonify(ret)
 
@@ -49,7 +49,7 @@ def somar(value1, value2):
 
 
 @app.route('/subtraction/<value1>/<value2>', methods=['GET'])
-def subtraction(value1,value2):
+def subtraction(value1, value2):
     try:
         valor1 = int(value1)
     except:
@@ -60,7 +60,7 @@ def subtraction(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "Resultado" : valor1 - valor2 }
+    ret = {"Resultado": valor1 - valor2}
 
     return jsonify(ret)
 
@@ -69,7 +69,7 @@ def subtraction(value1,value2):
 
 
 @app.route('/division/<value1>/<value2>', methods=['GET'])
-def division(value1,value2):
+def division(value1, value2):
     try:
         valor1 = int(value1)
     except:
@@ -80,7 +80,7 @@ def division(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "Resultado" : valor1 / valor2 }
+    ret = {"Resultado": valor1 / valor2}
 
     return jsonify(ret)
 
@@ -89,7 +89,7 @@ def division(value1,value2):
 
 
 @app.route('/multiplication/<value1>/<value2>', methods=['GET'])
-def multiplication(value1,value2):
+def multiplication(value1, value2):
     try:
         valor1 = int(value1)
     except:
@@ -100,7 +100,7 @@ def multiplication(value1,value2):
     except:
         return 'Segundo valor inválido.'
 
-    ret = { "Resultado" : valor1 * valor2 }
+    ret = {"Resultado": valor1 * valor2}
 
     return jsonify(ret)
 
@@ -115,7 +115,7 @@ def squareroot(value):
     except:
         return 'Valor inválido.'
 
-    ret = { "Resultado" : sqrt(valor1) }
+    ret = {"Resultado": sqrt(valor1)}
 
     return jsonify(ret)
 
@@ -124,7 +124,7 @@ def squareroot(value):
 
 
 @app.route('/power/<base>/<exponent>', methods=['GET'])
-def power(base,exponent):
+def power(base, exponent):
     try:
         li_base = int(base)
     except:
@@ -135,7 +135,7 @@ def power(base,exponent):
     except:
         return 'Expoente inválido.'
 
-    ret = { "Resultado" : li_base ** li_exponent }
+    ret = {"Resultado": li_base ** li_exponent}
 
     return jsonify(ret)
 
@@ -144,7 +144,7 @@ def power(base,exponent):
 
 
 @app.route('/arithmeticaverage/<value1>/<value2>/<value3>', methods=['GET'])
-def arithmeticaverage(value1,value2,value3):
+def arithmeticaverage(value1, value2, value3):
     try:
         valor1 = int(value1)
     except:
@@ -160,7 +160,7 @@ def arithmeticaverage(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "Resultado" : (valor1 + valor2 + valor3) / 3 }
+    ret = {"Resultado": (valor1 + valor2 + valor3) / 3}
 
     return jsonify(ret)
 
@@ -169,7 +169,7 @@ def arithmeticaverage(value1,value2,value3):
 
 
 @app.route('/harmonicmean/<value1>/<value2>/<value3>', methods=['GET'])
-def harmonicmean(value1,value2,value3):
+def harmonicmean(value1, value2, value3):
     try:
         valor1 = int(value1)
     except:
@@ -185,7 +185,7 @@ def harmonicmean(value1,value2,value3):
     except:
         return 'Terceiro valor inválido.'
 
-    ret = { "Resultado" : 3 / ((1 / valor1) + (1 / valor2) + (1 / valor3)) }
+    ret = {"Resultado": 3 / ((1 / valor1) + (1 / valor2) + (1 / valor3))}
 
     return jsonify(ret)
 
@@ -194,7 +194,7 @@ def harmonicmean(value1,value2,value3):
 
 
 @app.route('/mod/<value1>/<value2>/<value3>', methods=['GET'])
-def mod(value1,value2,value3):
+def mod(value1, value2, value3):
     try:
         valor1 = int(value1)
     except:
@@ -220,9 +220,9 @@ def mod(value1,value2,value3):
             dicionario[str(numeros)] = 1
 
     if dicionario[max(dicionario, key=dicionario.get)] == 1:
-        ret = { "Resultado" : str(dicionario.keys()) }
+        ret = {"Resultado": array}
     else:
-        ret = { "Resultado" : (max(dicionario, key=dicionario.get)) }
+        ret = {"Resultado": (max(dicionario, key=dicionario.get))}
 
     return jsonify(ret)
 
